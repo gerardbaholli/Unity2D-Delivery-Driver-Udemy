@@ -10,8 +10,8 @@ public class Driver : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed;
-        float moveAmount = Input.GetAxis("Vertical") * moveSpeed;
+        float steerAmount = Input.GetAxis("Horizontal") * Time.deltaTime * steerSpeed;
+        float moveAmount = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
     }
